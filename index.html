@@ -1,1 +1,754 @@
-Hello World
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="neural network, remark.js, slides" />
+    <meta name="description" content="Neural network presentation" />
+    <title>Neural network</title>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+        opacity: 1.0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      /* Custom css classes for background images */
+      .neuralnet3 {
+        background-image: url(nnet7.jpg);
+        opacity:0.75;
+      }
+      .full-width {
+        background-size: auto 100%;
+      }
+      .full-height {
+        background-size: auto 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+class: neuralnet3, full-width, full-height
+# Neural Nets: from Perceptron to Deep Learning
+[or mimicking brain]
+.footnote[or skip it to [Tensorflow Playground](http://playground.tensorflow.org/)]
+---
+## What are deep artificial neural nets?
+---
+layout: false
+.left-column[
+  ## What is it?
+]
+.right-column[
+  Another bio-inspired, crazy-AI-maths unindentified object a.k.a:
+
+- the *most popular ML algorithm* after linear models
+
+- the reason for bi-weekly Breaking News from Google
+
+- the stuff that *already* tags maps, photos, unlocks your IPhone, translate your texts, recognize your speech,...
+
+- the stuff that *has been* reading bankchecks, detecting frauds, identifying threats...for more than 20 years
+
+- the stuff that *will* drive your car, diagnose a cancer, transform a panda, generate people...
+
+<img src="panda.gif" width="230">
+<img src="gen.gif" width="230">
+
+]
+---
+.left-column[
+  ## For real ?
+]
+.right-column[
+  Before transistors and C language era
+
+  - **hardware** implementation of ANN
+
+
+<img src="perceptron.jpeg" width="400">
+
+]
+---
+.left-column[
+  ## Historically
+]
+.right-column[
+  ANN started in 1943, complex timeline
+
+  - Cybernetics era, followed by a 'crazy-expectations' era
+
+  - Massively funded era (IT, finance) sounded by an SVM era
+
+  - Deep Learning era (since 2006) is actually the third wave
+
+
+<img src="Google_Scholar.png" width="600">
+
+]
+---
+.left-column[
+  ## Second wave
+]
+.right-column[
+  Starting in the 80's, essentially at AT&T, Microsoft and IBM
+
+  - backpropagation, Convolutionnal Neural Networks, Long Short Term Memory
+
+  - Hinton (Univ. Toronto), LeCun (Bell Labs), Bengio (Univ. Montreal)
+
+  - training was hard but already in production for inference
+
+
+
+<img src="asamples.gif" width="400">
+
+
+> " *At some point in the late 1990s, one of these systems was reading 10 to 20% of all the checks in the US.* " Y. LeCun (2014)
+]
+---
+.left-column[
+  ## Second wave
+]
+.right-column[
+  (Shallow) Neural networks already in common use with crafted features engineering
+
+  - *much workload* was concerned by this *feature engineering* and *data preprocessing*
+
+  - once good features have been found, Neural Nets was just another ML technique (vs. SVM)
+
+  - more dedicated solutions (CNN, LSTM) were *hard to train*
+
+<img src="class.png" width="600">
+
+]
+---
+.left-column[
+  ## Third wave
+]
+.right-column[
+  Deep Neural networks learn the features and make inference easier
+
+  - no *more complex preprocessing* and automatically learns the right features
+
+  - much workload consists in training made possible with GPU
+
+  - inference pipeline simpler but requires *computing power*
+
+
+
+<img src="dll.png" width="600">
+
+]
+---
+# How do you train artificial neural nets?
+
+<img src="mlp2.jpg" width="600">
+---
+.left-column[
+  ## Jargon
+]
+.right-column[
+  As any domain, Neural Nets has its own Domain Specific Language, in addition to traditional ML issues
+
+  Comics view .red[*]
+
+<img src="google_comics.png" width="600">
+
+.footnote[.red[*] source : https://codelabs.developers.google.com/]
+]
+---
+.left-column[
+  ## Maths
+]
+.right-column[
+  An ANN output is a linear combination of nonlinear outputs taken over linear combination of the inputs
+
+  - let's call the inputs `\(x=(x_1,\ldots,x_n)\)` and the weights `\(w\)` and the bias `\(b\)` of one neuron
+
+  - let's call f the activation function
+
+  - the output of one neuron is
+
+  $$ f(w_1 x_1 + \ldots + w_n x_n + b) $$
+
+
+<img src="formula2.png" width="400">
+
+  - now, with m neurons, the final output is
+
+  $$ g(x) = \sum_{i=1}^m \alpha_i f^i(w_1^i x_1 + \ldots + w_n^i x_n + b^i) + b_0$$
+]
+---
+.left-column[
+  ## MLP
+]
+.right-column[
+  What we have just described is the celebrated Multi-Layer-Perceptron architecture
+
+  - ancestors of all modern architectures (fully connected)
+
+  - created by Rosenblatt in 1963
+
+  - part of the feedforward class of neural nets (no loop back)
+
+
+
+<img src="mlp.gif" width="600">
+
+
+]
+---
+.left-column[
+  ## MLP
+]
+.right-column[
+  Activation function can be
+
+  - a smooth saturated function e.g. sigmoid
+
+  - piecewise linear (Rectified Linear Unit)
+
+  - anything (cosinus, identity)
+
+
+
+<img src="activation.png" width="600">
+
+
+]
+---
+.left-column[
+  ## Does it work?
+]
+.right-column[
+  Hornik's universal approximation theorem (a.k.a Cybenko's theorem)
+
+
+
+<img src="hornik.png" width="600">
+
+
+]
+---
+.left-column[
+  ## Training
+]
+.right-column[
+  Once architecture (number of layers, number of neurons, activation functions) is set, need to get the weights:
+
+  - Find the optimal values of weights s.t the loss function `\(L(w)\)` is minimum over the training set of `\(N\)` examples where
+
+  $$ \min L(w)=\frac{1}{N}\sum_{i=1}^N(g(x_i)-y_i)^2 $$
+
+  - Unconstrained non convex minimization problem over `\(w\)` variables
+
+  - With many optimization variables
+
+
+
+<img src="optimization.gif" width="600">
+
+
+]
+---
+.left-column[
+  ## Training
+]
+.right-column[
+  The only viable option for such a training is gradient descent
+
+  - iterative algorithm where you start from an initial guess of the values of the `\(w^0\)` and update them
+
+  $$ w^{i+1}=w^{i}-\alpha \nabla_w L(w^{i}) $$
+
+  - `\(\alpha\)` is known as the gradient step (in optimization) and the learning rate (in NN)
+
+  - quite simple...except you need `\(\nabla_w L(w^{i})\)`  **backpropagation algorithm**
+
+
+
+<img src="back.gif" width="350">
+
+
+]
+---
+.left-column[
+  ## Training
+]
+.right-column[
+  Training a MLP (and it is even more true for Deep Neural Nets) then requires
+
+  - solid scientific computing skills
+
+  - dedicated libraries essentially for distributed backpropagation and optimization (all are in C++ but sklearn and DL4J)
+
+  - solving an **optimization problem**
+
+
+
+<img src="cnn.png" width="350">
+
+]
+---
+.left-column[
+  ## Training
+]
+.right-column[
+  In addition to traditional ML parameters (regularization), training an MLP requires setting the right parameters for the
+  optimization
+
+  - optimization solvers: Stochastic Gradient Descent, Momentum, Adam, RMSProp, Nesterov...
+
+  - SGD is the most used solver, it is a simple Gradient Descent where you compute  `\(\nabla_w L(w^{i})\)` over a very small subset of the training basis (called *Minibatch*)
+
+
+
+
+
+
+
+<img src="opt1.gif" width="350">
+
+]
+---
+.left-column[
+  ## Training
+]
+.right-column[
+  Regularization is ensured through a ridge penalty term a.k.a *weight decay*, but
+  - *learning rate*: most important term, increases model capacity indirectly through its impact on optimization. More advanced strategies update
+  the learning rate (typically with TensorBoard)
+  - *number of neurons*: too many neurons leads to overfitting
+
+
+
+
+<img src="learningrates.jpeg" width="350">
+
+]
+---
+## What do they work for?
+
+<img src="googlernncnn.png" width="500">
+---
+.left-column[
+  ## Computer Vision
+]
+.right-column[
+   Convolutionnal Neural Networks (created by LeCun in 1989)
+
+  - achieve state-of-the-art performance for most CV challenges since 2012
+
+  - add to the MLP architecture layers of convolution (more exactly cross-correlation) adapted from traditional CV
+
+  - add newcomers such as *pooling* (a.k.a subsampling) and *dropout* to regularize and lower the number of parameters
+
+
+<img src="cnn_2.png" width="500">
+
+]
+---
+.left-column[
+  ## Computer Vision Architectures
+]
+.right-column[
+   Many sophisticated architectures
+
+  - Combines many layers ('deep') and in general several fully connected layers at the end
+
+  - Usually ReLu-like activation functions and TanH at the end, but the devil is in the sequel of pooling, batch
+
+  - Dropout only for training ! Not inference
+
+
+<img src="comp_archi.png" width="500">
+
+<img src="resnet.png" width="500">
+
+]
+---
+.left-column[
+  ## Computer Vision Architectures
+]
+.right-column[
+   Focus on classification, but other CV require more complex architectures
+
+  - Typically, object detection outputs one or several bounding boxes containing most probable objects
+
+  - Traditional CV uses pyramid of images and uses a classifier many times
+
+
+<img src="yolo.png" width="500">
+
+]
+---
+.left-column[
+  ## Computer Vision Architectures
+]
+.right-column[
+   CV grail is image segmentation (determines which class each pixel belongs to)
+
+  - Outputs a map (same size) of the original images
+
+  - Labelling !
+
+
+<img src="cat_segmentation.png" width="500">
+
+]
+---
+.left-column[
+  ## Computer Vision: best practices
+]
+.right-column[
+   Use a classical architecture (unless you're Google)
+
+  - Dataset: same aspect ratio, same resolution, same colormap
+
+  - Size: as many pictures as possibles, don't overlook Labelling
+
+  - Scaling: usually mean substraction (per pixel, per channel)
+
+  - Augment: train and test (crops, shift, rotation...)
+
+
+<img src="faces.png" width="500">
+
+]
+---
+.left-column[
+  ## Natural Language Processing
+]
+.right-column[
+   Long Short Term Memory networks are part of Recurrent Neural Networks (created in 1982 by Hopfield)
+
+  - unlike standard Feedforward they process inputs sequentially
+
+  - they retain information (*contextual*) in a memory
+
+  - works well for speech recognition, translation...
+
+
+<img src="rnn.gif" width="500">
+
+]
+---
+.left-column[
+  ## Unsupervised
+]
+.right-column[
+   Auto-encoders are an extension of MLP to automatically find the best reduction and coding/decoding at once
+
+  - part of unsupervised learning
+
+  - conceptually, it is a nonlinear dimension reduction technique decodable (unline t-SNE)
+
+  - often used to denoise signals, also for data synthesis
+
+
+<img src="enco.png" width="500">
+
+]
+---
+.left-column[
+  ## Unsupervised
+]
+.right-column[
+   Applications :
+
+   - find the concept of cat spawning Web images and videos
+
+   - probably unlocks your IPhone 10
+
+   - used as a compression for speech, image...
+
+
+<img src="nn_cat.jpeg" width="500">
+
+]
+---
+## Small focus on hardware
+
+<img src="gpu.jpg" width="500">
+---
+.left-column[
+  ## Training
+]
+.right-column[
+   In addition to learning rate and algorithmic improvements, modern Neural Nets work because
+
+  - more data (millions time more), better backprop algorithm (symbolic differentiation)
+
+  - progress in the initialization of weights and ReLu activation function
+
+  - **clever use of GPU** (in lieue of Moore's law): allows to distribute many easy-computations (kind of vectorization) with NVIDIA setting the standards (with CUDA language)
+
+
+<img src="dl.png" width="550">
+
+]
+---
+.left-column[
+  ## Training
+]
+.right-column[
+  In addition, GPU war has already started with new adversaries and allies :
+
+  - NVIDIA (with CUDA)  vs. AMD (with OpenCL)
+
+  - most DL libraries support only CUDA except stuff used at Apple
+
+  - Microsoft/Intel (with FPGA) vs. Amazon/Xilinx/Baidu (with XPU)
+
+  - Google (TPU)
+
+
+
+<img src="NVIDIA.png" width="450">
+
+]
+---
+.left-column[
+  ## Training
+]
+.right-column[
+   Big AI/fonders currently deploy strategic plans where training NN is different from infering NN :
+
+   - Microsoft massively deploys Field Programmable Gate Array with Intel Nervana for Cloud Deep Learning
+
+   - TPU/XPU (mix of CPU/GPU/FPGA) would go for inference !
+
+
+<img src="chips.jpg" width="600">
+
+]
+
+
+
+---
+.left-column[
+  ## On the future of deep learning
+]
+.right-column[
+   The future algorithms in deep learning probably are :
+
+   - **Generative Adversarial Networks** and **Autoencoders**
+
+   - **Reinforcement Learning** and **unsupervised learning** to avoid supervised learning
+
+   - New techniques such as **bayesian deep learning**,**synthetic gradients**, **evolution strategies** to counter slow backpropagation
+
+
+<img src="https://camo.githubusercontent.com/7443d2adadc104b885cac75a1894567c053c987f/687474703a2f2f7777772e6b646e7567676574732e636f6d2f77702d636f6e74656e742f75706c6f6164732f67656e657261746976652d616476657273617269616c2d6e6574776f726b2e706e67" width="500">
+
+]
+
+
+
+
+
+---
+## Generative Adversarial Networks (GANs)
+
+- Generative VS Discriminative (Classification, Regression)
+- Two neural networks : the Generator and the Discriminator that fights in a minimax game
+- Application :  Text-to-image, image-to-image ...
+
+<img src="https://junyanz.github.io/CycleGAN/images/teaser.jpg" width="700">
+
+
+---
+.left-column[
+  ## Deep Learning at home
+]
+.right-column[
+
+
+
+   ### Technical solutions :
+
+   - **Python** : Theano (Montreal), Tensorflow (Google), Keras (Google), Caffe and Pytorch (Facebook), CNTK (Microsoft), MXNET (Amazon), Paddle (Baidu)
+
+   - **R** : Keras (Google)
+
+   - **Javascript** : deeplearning.js, ex : [Teachable machines](https://teachablemachine.withgoogle.com/)
+
+
+]
+
+
+---
+.left-column[
+  ## Deep Learning at home
+]
+.right-column[
+
+
+   ### Resources :
+
+   - Introduction videos [Part 1](https://www.youtube.com/watch?v=aircAruvnKk) and [Part 2](https://www.youtube.com/watch?v=IHZwWFHWa-w)
+
+   - Benchmark different libraries to recognize MNIST [github link](https://github.com/TheoLvs/machine-learning/blob/master/1.%20Computer%20Vision/2.%20MNIST%20Recognition.ipynb)
+
+   - Stanford course CS231n : [Convolutional Neural Networks for Visual Recognition](http://cs231n.github.io/)
+
+   - [Fast.ai course](http://course.fast.ai/part2.html)
+
+   - [Deeplearning.ai course on Coursera](https://www.coursera.org/specializations/deep-learning)
+
+   - [Google course](https://classroom.udacity.com/courses/ud730)
+
+
+
+]
+
+
+
+
+
+
+
+---
+## That's all folks !
+
+<img src="giphy.gif" width="500">
+---
+
+
+
+
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+
+      // Setup MathJax
+      MathJax.Hub.Config({
+          tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          }
+      });
+
+      MathJax.Hub.Configured();
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
