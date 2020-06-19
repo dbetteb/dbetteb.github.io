@@ -462,11 +462,29 @@ layout: false
   ## Computer Vision
 ]
 .right-column[
+   Convolutionnal Neural Networks (created by LeCun in 1989)
+
+  - achieve state-of-the-art performance for most CV challenges since 2012
+
+  - add to the MLP architecture layers of convolution (more exactly cross-correlation) adapted from traditional CV
+
+  - add newcomers such as *pooling* (a.k.a subsampling) and *dropout* to regularize and lower the number of parameters
+
+<img src="cnn_2.png" width="500">
+
+]
+---
+.left-column[
+  ## Computer Vision
+]
+.right-column[
    Convolutionnal Layers specific to pictures
 
   - Fully Connected layers would involve too many parameters for one picture (think
   of a 1000 $\times$ 1000, first layer for one neuron would involve $1000000$ weights)
+
   - Convolutions help reduce the number of parameters
+
   - Weights of the convolution become trainable parameters
 
 <img src="convol.gif" width="500">
