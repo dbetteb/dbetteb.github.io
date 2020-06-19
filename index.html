@@ -410,7 +410,7 @@ layout: false
 
   - optimization solvers: Stochastic Gradient Descent, Momentum, Adam, RMSProp, Nesterov...
 
-  - SGD is the most used solver, it is a simple Gradient Descent where you compute  `\(\nabla_w L(w^{i})\)` over a very small subset of the training basis (called *Minibatch*)
+  - SGD is the most used solver, it is a simple Gradient Descent where you compute  `\(\nabla_w L(w^{i})\)` over a very small subset of the training basis (called *Minibatch*) and hence the Stochastic gradient
 
 
 
@@ -456,6 +456,21 @@ layout: false
 
 
 <img src="cnn_2.png" width="500">
+
+]
+---
+.left-column[
+  ## Computer Vision
+]
+.right-column[
+   Convolutionnal Layers specific to pictures
+
+  - Fully Connected layers would involve too many parameters for one picture (think
+  of a 1000 $\times$ 1000, first layer for one neuron would involve $1000000$ weights)
+  - Convolutions help reduce the number of parameters
+  - Weights of the convolution become trainable parameters
+
+<img src="convol.gif" width="500">
 
 ]
 ---
