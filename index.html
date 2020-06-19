@@ -446,6 +446,23 @@ layout: false
   ## Computer Vision
 ]
 .right-column[
+   Convolutionnal Neural Networks (created by LeCun in 1989)
+
+  - achieve state-of-the-art performance for most CV challenges since 2012
+
+  - add to the MLP architecture layers of convolution (more exactly cross-correlation) adapted from traditional CV
+
+  - add newcomers such as *pooling* (a.k.a subsampling) and *dropout* to regularize and lower the number of parameters
+
+
+<img src="cnn_2.png" width="500">
+
+]
+---
+.left-column[
+  ## Computer Vision
+]
+.right-column[
    Convolutionnal Layers specific to pictures
 
   - Fully Connected layers would involve too many parameters for one picture (think
@@ -552,7 +569,7 @@ layout: false
 
   - part of unsupervised learning
 
-  - conceptually, it is a nonlinear dimension reduction technique decodable (unline t-SNE)
+  - conceptually, it is a nonlinear dimension reduction technique decodable (unlike t-SNE)
 
   - often used to denoise signals, also for data synthesis
 
@@ -708,7 +725,7 @@ layout: false
 
    - **Automatic differentation**
 
-   <img src="dlframeworks.jpg" width="700">
+   <img src="dlframeworks.jpg" width="300">
 
 
 ]
@@ -731,7 +748,30 @@ layout: false
 
    - Define-and-run (static graph) vs. more general define-by-run (dynamic graph)
 
-   <img src="staticgraph.png" width="700">
+   <img src="staticgraph.png" width="300">
+
+
+]
+
+
+---
+.left-column[
+  ## DL Frameworks
+]
+.right-column[
+
+
+
+   ### Tensorflow :
+
+   - Static computational graph "build graph once and run it many times over distributed machines"
+
+   - Developped by Google (for dev and production)
+
+   - Massive community and side projects (mobile, tensorflow-probability)
+
+
+   <img src="tensorflow.png" width="200">
 
 
 ]
@@ -751,11 +791,11 @@ layout: false
 
    - Developped by Facebook (PyTorch+Caffe2 for production)
 
-   - Massive community and side projects (tensorflow-probability)
+   - Massive community and side projects (pyro)
 
    - More flexble, research oriented
 
-   <img src="pytorch.png" width="700">
+   <img src="pytorch.png" width="200">
 
 
 ]
