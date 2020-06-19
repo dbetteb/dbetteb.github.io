@@ -405,7 +405,7 @@ layout: false
   ## Training
 ]
 .right-column[
-  In addition to traditional ML parameters (regularization), training an MLP requires setting the right parameters for the
+  In addition to traditional ML parameters (regularization), training an DNN requires setting the right parameters for the
   optimization
 
   - optimization solvers: Stochastic Gradient Descent, Momentum, Adam, RMSProp, Nesterov...
@@ -446,42 +446,10 @@ layout: false
   ## Computer Vision
 ]
 .right-column[
-   Convolutionnal Neural Networks (created by LeCun in 1989)
-
-  - achieve state-of-the-art performance for most CV challenges since 2012
-
-  - add to the MLP architecture layers of convolution (more exactly cross-correlation) adapted from traditional CV
-
-  - add newcomers such as *pooling* (a.k.a subsampling) and *dropout* to regularize and lower the number of parameters
-
-<img src="cnn_2.png" width="500">
-
-]
----
-.left-column[
-  ## Computer Vision
-]
-.right-column[
-   Convolutionnal Neural Networks (created by LeCun in 1989)
-
-  - achieve state-of-the-art performance for most CV challenges since 2012
-
-  - add to the MLP architecture layers of convolution (more exactly cross-correlation) adapted from traditional CV
-
-  - add newcomers such as *pooling* (a.k.a subsampling) and *dropout* to regularize and lower the number of parameters
-
-<img src="cnn_2.png" width="500">
-
-]
----
-.left-column[
-  ## Computer Vision
-]
-.right-column[
    Convolutionnal Layers specific to pictures
 
   - Fully Connected layers would involve too many parameters for one picture (think
-  of a 1000 $\times$ 1000, first layer for one neuron would involve $1000000$ weights)
+  of a 1000 px `\times` 1000 px, first layer for one neuron would involve 1000000 weights)
 
   - Convolutions help reduce the number of parameters
 
@@ -715,6 +683,55 @@ layout: false
    - **R** : Keras (Google)
 
    - **Javascript** : deeplearning.js, ex : [Teachable machines](https://teachablemachine.withgoogle.com/)
+
+
+]
+
+
+---
+.left-column[
+  ## DL Frameworks
+]
+.right-column[
+
+
+
+   ### Deep Learning frameworks :
+
+   - Allows to build complicated architecture neural networks
+
+   - They are all optimized for performance (low-level libraries written in C/C++ wrapped to be called by a high-level API)
+
+   - Community support (continuous development)
+
+   - GPU-acceleration and massive parallelizations
+
+   - **Automatic differentation**
+
+   <img src="dlframeworks.jpg" width="700">
+
+
+]
+
+
+---
+.left-column[
+  ## DL Frameworks
+]
+.right-column[
+
+
+
+   ### Computational Graphs and AD :
+
+   - User define a computational graph as a composition of transformations (the flow) of the data
+
+   - This graph will be optimized for execution and for gradient computation (automatic differentiation), usually many more parameters
+   than output hence reverse mode (backward) is implemented
+
+   - Define-and-run (static graph) vs. More general define-by-run (dynamic graph)
+
+   <img src="staticgraph.png" width="700">
 
 
 ]
