@@ -129,6 +129,11 @@
       .full-height {
         background-size: auto 100%;
       }
+      .neuralnet4 {
+        background-image: url(cvbg.jpg);
+        opacity:0.75;
+      }
+
 
     </style>
   </head>
@@ -276,7 +281,7 @@ layout: false
 
   - let's call the inputs `\(x=(x_1,\ldots,x_n)\)` and the weights `\(w\)` and the bias `\(b\)` of one neuron
 
-  - let's call `f` the activation function
+  - let's call `\(f\)` the activation function of one given neuron
 
   - the output of one neuron is
 
@@ -313,9 +318,10 @@ layout: false
   ## MLP
 ]
 .right-column[
-  Activation function can be
+  Activation function is the unit process function that every input transformation goes through. Initially, this function purpose was to mimick ON/OFF process of axons. Before deep learning, ANN practitioners favored differentiable activation function.
+  But since deep learning upraisal, this situation has changed and now it can be
 
-  - a smooth saturated function e.g. sigmoid
+  - a smooth saturated function e.g. sigmoid, hyperbolic tangent
 
   - piecewise linear (Rectified Linear Unit)
 
@@ -405,7 +411,7 @@ layout: false
   ## Training
 ]
 .right-column[
-  In addition to traditional ML parameters (regularization), training an DNN requires setting the right parameters for the
+  In addition to traditional ML parameters (regularization), training an DNN requires setting the right hyperparameters for the
   optimization
 
   - optimization solvers: Stochastic Gradient Descent, Momentum, Adam, RMSProp, Nesterov...
@@ -441,6 +447,48 @@ layout: false
 ## What do they work for?
 
 <img src="googlernncnn.png" width="500">
+---
+.left-column[
+  ## Automatic Processing Tasks
+]
+.right-column[
+   Deep Learning upraisal was motivated by reaching human-like errors rate for traditional challenges in Robotics, IA... by taking advantage of large amount of data collected
+   by american and chinese tech giants almost for free. This include
+
+  - Computer Vision (pictures from Mobile Phones)
+
+  - Natural Language Processing (Text and Comments from the World Wide Web)
+
+  - Speech (excerpts of talks from Mobile Phones and Collaborative Platforms)
+
+
+<img src="IAtasks.png" width="500">
+
+]
+---
+class: neuralnet4, full-width, full-height
+# Computer Vision
+
+.footnote[or skip it to [Tensorflow Playground](http://playground.tensorflow.org/)]
+---
+.left-column[
+  ## Computer Vision - Tasks
+]
+.right-column[
+   In Image Processing (or Computer Vision typically for Robotics, Detection...), traditional challenges and tasks are
+
+  - image classification (threat or not ?)
+
+  - object detection (where is the threat in the picture ?)
+
+  - segmentation (background removal) or instance cat_segmentation
+
+  - scene understanding, location, mapping (SLAM), 3d reconstruction...
+
+
+<img src="cvtasks.png" width="500">
+
+]
 ---
 .left-column[
   ## Computer Vision
