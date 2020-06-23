@@ -167,8 +167,9 @@ layout: false
 
 - the stuff that *will* help drive your car, diagnose a cancer, transform a panda, generate people...
 
-<img src="panda.gif" width="230">
-<img src="gen.gif" width="230">
+<img src="panda.gif" style="width: 40%">
+<img src="gen.gif" style="width: 40%">
+
 
 ]
 ---
@@ -176,12 +177,18 @@ layout: false
   ## For real ?
 ]
 .right-column[
-  Before transistors and C language era
+  Artificial Neural Networks are as old as Artificial Intelligence, initial goal was to create a **machine**
+  that would reason the same way as the humain brain, except neurons would be central computing units connected
+  by wires
 
-  - historical **hardware** implementation of ANN now that's essentially a piece of specific code running on GPU or TPU
+  - historical **hardware** implementation of ANN before transistors became code with transistors and high level languages
 
+  - with DL it has essentially become a piece of specific code running on GPU or TPU
 
-<img src="perceptron.jpg" width="400">
+  - but AI chip dream still around
+
+  <img src="mark1.png" style="width: 40%">
+  <img src="AIchip.png" style="width: 43%">
 
 ]
 ---
@@ -193,7 +200,7 @@ layout: false
 
   - Cybernetics era, followed by a 'crazy-expectations' era
 
-  - Massively funded era (IT, finance) sounded by an SVM era
+  - Massively funded era (defence, IT, finance) sounded by an SVM era
 
   - **Deep Learning era** (since 2006) is actually the third wave, most succesfull period
 
@@ -206,7 +213,7 @@ layout: false
   ## Second wave
 ]
 .right-column[
-  Starting in the 80's, essentially at AT&T, Microsoft and IBM
+  Starting in the 80's, essentially at AT&T, MIT, Microsoft and IBM
 
   - backpropagation, Convolutionnal Neural Networks, Long Short Term Memory
 
@@ -281,7 +288,7 @@ layout: false
 
   - let's call the inputs `\(x=(x_1,\ldots,x_n)\)` and the weights `\(w\)` and the bias `\(b\)` of one neuron
 
-  - let's call `\(f\)` the activation function of one given neuron
+  - let's call `\(f\)` the **activation function** of one given neuron
 
   - the output of one neuron is
 
@@ -315,7 +322,7 @@ layout: false
 ]
 ---
 .left-column[
-  ## MLP
+  ## Activation Functions
 ]
 .right-column[
   Activation function is the unit process function that every input transformation goes through. Initially, this function purpose was to mimick ON/OFF process of axons. Before deep learning, ANN practitioners favored differentiable activation function.
@@ -469,7 +476,6 @@ layout: false
 class: neuralnet4, full-width, full-height
 # Computer Vision
 
-.footnote[or skip it to [Tensorflow Playground](http://playground.tensorflow.org/)]
 ---
 .left-column[
   ## Computer Vision - Tasks
@@ -516,7 +522,7 @@ class: neuralnet4, full-width, full-height
 
   - achieve state-of-the-art performance for most CV challenges since 2012
 
-  - add to the MLP architecture layers of convolution (more exactly cross-correlation) adapted from traditional CV
+  - add to the MLP architecture layers of convolution adapted from traditional CV
 
   - add newcomers such as *pooling* (a.k.a subsampling) and *dropout* to regularize and lower the number of parameters
 
