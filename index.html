@@ -582,11 +582,13 @@ class: neuralnet4, full-width, full-height
   ## Computer Vision Architectures
 ]
 .right-column[
-   CV grail is image segmentation (determines which class each pixel belongs to)
+   A difficult CV task is semantic segmentation (determines which class each pixel belongs to)
 
   - Outputs a map (same size) of the original images
 
-  - Labelling !
+  - Apply convolution and then deconvolution
+
+  - Labelling is tedious
 
 
 <img src="cat_segmentation.png" width="500">
@@ -597,7 +599,7 @@ class: neuralnet4, full-width, full-height
   ## Computer Vision: best practices
 ]
 .right-column[
-   Use a classical architecture (unless you're Google)
+   Use a classical architecture (unless you're Google or Facebook) or even better transfer learning
 
   - Dataset: same aspect ratio, same resolution, same colormap
 
@@ -606,6 +608,10 @@ class: neuralnet4, full-width, full-height
   - Scaling: usually mean substraction (per pixel, per channel)
 
   - Augment: train and test (crops, shift, rotation...)
+
+  - DL's book Rule-Of-Thumb : need at list `\5,000\` examples per category and `\10,000,000\` examples to reach human error rate
+
+  - Many practical advices (here)[https://jeffmacaluso.github.io/post/DeepLearningRulesOfThumb/]
 
 
 <img src="faces.png" width="500">
