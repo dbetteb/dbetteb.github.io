@@ -635,7 +635,7 @@ class: neuralnet5, full-width, full-height
   ## Natural Language Processing Tasks
 ]
 .right-column[
-   AI initial goal was to make machine able to understand and generate texts to interact with humans (Turing test). Such a goal relies on easy to very hard tasks
+   AI initial goal was to make machine able to understand and generate texts and speech to interact with humans (Turing test). Such a goal relies on easy to very hard tasks
 
   - **Easy** Spelling correction, Part-of-Speech tagging...
 
@@ -654,7 +654,7 @@ class: neuralnet5, full-width, full-height
 .right-column[
    NLP is hard because
 
-  - Hard pre-processing (segmentation)
+  - Hard pre-processing (segmentation) and sequential by nature
 
   - Sparsity of examples (many words not used very often, different sizes...)
 
@@ -670,7 +670,45 @@ class: neuralnet5, full-width, full-height
 ]
 ---
 .left-column[
-  ## Natural Language Processing
+  ## Natural Language Processing Traditional Methods
+]
+.right-column[
+   NLP has a longer history than AI, many different methods
+
+  - Rule-based (think of `\(regexp\)`)
+
+  - Language Models based on n-grams (Markov models) and dictionary
+
+  - Graph-based methods (Viterbi algorithm)
+
+  - Manual feature extraction (dictionary, bag of words, tf-idf) and ML classifier
+
+
+<img src="ngrams.png" width="500">
+
+]
+---
+.left-column[
+  ## Natural Language Processing Neural Networks Approach
+]
+.right-column[
+   Similar to CV, NLP has experienced some real advances with the help of Artificial Neural Networks
+
+  - Long Short Term Memory unit in Recurrent Neural Network for Language Models
+
+  - Word Embeddings **word2vec** approach
+
+  - Sequence-to-Sequence learning and attention mechanisms (Neural Machine Translation)
+
+  - Transformers
+
+
+<img src="word2vec.png" width="500">
+
+]
+---
+.left-column[
+  ## Natural Language Processing LSTM
 ]
 .right-column[
    Long Short Term Memory networks are part of Recurrent Neural Networks (created in 1982 by Hopfield)
@@ -679,7 +717,7 @@ class: neuralnet5, full-width, full-height
 
   - they retain information (*contextual*) in a memory
 
-  - works well for speech recognition, translation...
+  - works well for Language Modelling, Sequence-to-Sequence models, translation...
 
 
 <img src="rnn.gif" width="500">
