@@ -526,7 +526,7 @@ class: neuralnet4, full-width, full-height
 ]
 ---
 .left-column[
-  ## Computer Vision
+  ## Computer Vision - Convolution
 ]
 .right-column[
    Convolutionnal Layers specific to pictures
@@ -565,11 +565,13 @@ class: neuralnet4, full-width, full-height
   ## Computer Vision Architectures
 ]
 .right-column[
-   Focus on classification, but other CV require more complex architectures
+   Main challenges and architectures focus on image classification, but other CV tasks require more complex architectures
 
   - Typically, object detection outputs one or several bounding boxes containing most probable objects
 
-  - Traditional CV uses pyramid of images and uses a classifier many times
+  - Traditional CV uses pyramid of images and uses a classifier many times over many different regions and outputs region with gighest scores
+
+  - Object recognition recent DL architectures rely on efficient subdivision and probability map to speed up object detection
 
 
 <img src="yolo.png" width="500">
