@@ -1,0 +1,7 @@
+print(Toto)
+print(Toto)
+print(Toto)
+print(Toto)
+print(`Toto`)
+print("Toto`)
+print("Toto")
