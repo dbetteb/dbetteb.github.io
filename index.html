@@ -548,13 +548,32 @@ class: neuralnet4, full-width, full-height
    Convolutionnal Layers specific to pictures
 
   - Fully Connected layers would involve too many parameters for one picture (think
-  of a `\(1000 \mbox{px}  \times  1000 \mbox{px} \)` picture, first layer for one neuron would involve `\(1,000,000 \)` weights)
+  of a `\(1000 \mbox{px}  \times  1000 \mbox{px}\)` picture, first layer for one neuron would involve `\(1,000,000\)` weights)
 
   - Convolutions help reduce the number of parameters
 
   - Weights of the convolution become trainable parameters
 
 <img src="convol.gif" width="500">
+
+]
+---
+.left-column[
+  ## Computer Vision - Dropout and Pooling
+]
+.right-column[
+   Dropout
+
+  - Some connections between neurons and layers are switched off during training. Typical amount is 20 %
+  of neurons randomly selected during training. Dropout helps regularization
+
+<img src="dropout.gif" width="300">
+
+  Pooling
+
+  - Subsampling helps reduce the number of parameters
+
+<img src="pooling.gif" width="300">
 
 ]
 ---
@@ -732,17 +751,36 @@ class: neuralnet5, h1, full-width, full-height
 ]
 ---
 class: neuralnet6, h1, full-width, full-height
-# GAN's, Adversarials and VAE
 
 ---
 .left-column[
   ## Generative Adversarial Networks (GANs)
 ]
 .right-column[
+   Best idea in Machine Learning over 10 years (Yann LeCun)
 
-- Generative VS Discriminative (Classification, Regression)
-- Two neural networks : the Generator and the Discriminator that fights in a minimax game
-- Application :  Text-to-image, image-to-image ...
+  - Generative VS Discriminative (Classification, Regression)
+
+  - Two neural networks : the Generator and the Discriminator that fights in a minimax game
+
+  - Quite hard training... recent methods take inspiration from Optimal Flow
+
+     <img src="https://camo.githubusercontent.com/7443d2adadc104b885cac75a1894567c053c987f/687474703a2f2f7777772e6b646e7567676574732e636f6d2f77702d636f6e74656e742f75706c6f6164732f67656e657261746976652d616476657273617269616c2d6e6574776f726b2e706e67" width="500">
+
+
+]
+---
+.left-column[
+  ## Generative Adversarial Networks (GANs)
+]
+.right-column[
+   Applications
+
+  - Generate realistic images
+
+  - Augment resolution
+
+  - Application :  Text-to-image, image-to-image ...
 
 <img src="https://junyanz.github.io/CycleGAN/images/teaser.jpg" width="700">
 
@@ -752,7 +790,7 @@ class: neuralnet6, h1, full-width, full-height
   ## Autoencoders
 ]
 .right-column[
-   Auto-encoders are an extension of MLP to automatically find the best reduction and coding/decoding at once
+   Autoencoders are a deep extension of MLP to automatically find the best reduction and coding/decoding at once
 
   - part of unsupervised learning
 
@@ -766,14 +804,14 @@ class: neuralnet6, h1, full-width, full-height
 ]
 ---
 .left-column[
-  ## Autoencoders
+  ## Auto-encoders
 ]
 .right-column[
    Applications :
 
    - find the concept of cat spawning Web images and videos
 
-   - probably unlocks your IPhone 10
+   - help unlock your IPhone 10
 
    - used as a compression for speech, image...
 
@@ -786,12 +824,14 @@ class: neuralnet6, h1, full-width, full-height
   ## Adversarial Attacks
 ]
 .right-column[
-   Goodfellow  :
+   Basic idea  :
 
-   - 
+   - Find with optimzation amount of pixels to add to an image to change prediction of CNN
+
+   - DNN are very sensititive to small changes of pixel values
 
 
-<img src="nn_cat.jpeg" width="500">
+<img src="patch.gif" width="500">
 
 ]
 ---
@@ -805,9 +845,9 @@ class: neuralnet6, h1, full-width, full-height
 .right-column[
    In addition to learning rate and algorithmic improvements, modern Neural Nets work because
 
-  - more data (millions time more), better backprop algorithm (symbolic differentiation)
+  - more data (millions time more), better backprop algorithm (automatic differentiation)
 
-  - progress in the initialization of weights and ReLu activation function
+  - progress in the secret sauce (initialization of weights, dropout, activation function...)
 
   - **clever use of GPU** (in lieue of Moore's law): allows to distribute many easy-computations (kind of vectorization) with NVIDIA setting the standards (with CUDA language)
 
@@ -867,7 +907,6 @@ class: neuralnet6, h1, full-width, full-height
    - New techniques such as **bayesian deep learning**, **synthetic gradients**n
 
 
-<img src="https://camo.githubusercontent.com/7443d2adadc104b885cac75a1894567c053c987f/687474703a2f2f7777772e6b646e7567676574732e636f6d2f77702d636f6e74656e742f75706c6f6164732f67656e657261746976652d616476657273617269616c2d6e6574776f726b2e706e67" width="500">
 
 ]
 
@@ -939,7 +978,7 @@ class: neuralnet6, h1, full-width, full-height
 
    - Define-and-run (static graph) vs. more general define-by-run (dynamic graph)
 
-   <img src="staticgraph.png" width="300">
+   <img src="staticgraph.png" width="250">
 
 
 ]
@@ -962,7 +1001,7 @@ class: neuralnet6, h1, full-width, full-height
    - Massive community and side projects (mobile, tensorflow-probability)
 
 
-   <img src="tensorflow.png" width="400">
+   <img src="tensorflow.png" width="500">
 
 
 ]
@@ -986,7 +1025,7 @@ class: neuralnet6, h1, full-width, full-height
 
    - More flexible, research oriented
 
-   <img src="pytorch.png" width="400">
+   <img src="pytorch.png" width="500">
 
 
 ]
