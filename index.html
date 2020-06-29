@@ -763,7 +763,7 @@ class: neuralnet6, h1, full-width, full-height
 
   - Two neural networks : the Generator and the Discriminator that fights in a minimax game
 
-  - Quite hard training... recent methods take inspiration from Optimal Flow
+  - Quite hard training... recent methods take inspiration from [Optimal Transport](https://weave.eu/le-transport-optimal-un-couteau-suisse-pour-la-data-science/) theory (Wasserstein distance)
 
      <img src="https://camo.githubusercontent.com/7443d2adadc104b885cac75a1894567c053c987f/687474703a2f2f7777772e6b646e7567676574732e636f6d2f77702d636f6e74656e742f75706c6f6164732f67656e657261746976652d616476657273617269616c2d6e6574776f726b2e706e67" width="500">
 
@@ -778,11 +778,11 @@ class: neuralnet6, h1, full-width, full-height
 
   - Generate realistic images
 
-  - Augment resolution
+  - Augment resolution...
 
-  - Application :  Text-to-image, image-to-image ...
+  - Text-to-image, image-to-image ...
 
-<img src="https://junyanz.github.io/CycleGAN/images/teaser.jpg" width="700">
+<img src="https://junyanz.github.io/CycleGAN/images/teaser.jpg" width="600">
 
 ]
 ---
@@ -830,6 +830,8 @@ class: neuralnet6, h1, full-width, full-height
 
    - DNN are very sensititive to small changes of pixel values
 
+   - Funny but very worrying for security and industrial applications of CNN
+
 
 <img src="patch.gif" width="500">
 
@@ -860,15 +862,17 @@ class: neuralnet6, h1, full-width, full-height
   ## Training
 ]
 .right-column[
-  In addition, GPU war has already started with new adversaries and allies :
+  In addition, chip  war has already started with old and new players :
 
   - NVIDIA (with CUDA)  vs. AMD (with OpenCL)
 
-  - most DL libraries support only CUDA except stuff used at Apple
+  - most DL libraries support only CUDA except Caffe (Apple) but would like to get rid of NVIDIA-dependency
 
   - Microsoft/Intel (with FPGA) vs. Amazon/Xilinx/Baidu (with XPU)
 
-  - Google (TPU)
+  - Google (Tensor Processing Unit)
+
+  - Cloud-based services
 
 
 
@@ -898,13 +902,17 @@ class: neuralnet6, h1, full-width, full-height
   ## On the future of deep learning
 ]
 .right-column[
-   The future algorithms in deep learning probably are :
+   Future, trends and challenges :
 
-   - **Generative Adversarial Networks** and **Autoencoders**
+   - Much ado about **Generative Adversarial Networks** and **Autoencoders**
 
-   - **Reinforcement Learning** and **unsupervised learning** to avoid supervised learning
+   - Several years ago, DNN was successfully integrated in Reinforcement Learning (Deep Q-learning)
 
-   - New techniques such as **bayesian deep learning**, **synthetic gradients**n
+   - Safety-critical ML issues (adversarial, uncertainty...)
+
+   - Prove something about DNN (data coverage with TDA, formal methods for robustness evaluation...)
+
+   - Conciliate physics-based, expert knowledge reasoning and predictive power of Deep Learning **Bayesian Deep Learning**
 
 
 
